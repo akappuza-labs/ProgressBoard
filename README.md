@@ -1,7 +1,7 @@
 # ProgressBoard
-Enterprise organization system
+Project organization system
 
-==========================================English=============================================
+==================================English=====================================
 
 Develop a project management system.
 
@@ -36,9 +36,9 @@ Technology stack:
 	- Framework for web applications: ASP.NET Core 6
 	- Frontend: React
 
-==========================================Russian=============================================
+==================================Russian=====================================
 
-Разработать систему организации прооктов.
+Cистему организации проeктов.
 
 Бизнес требования:
 
