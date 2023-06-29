@@ -8,5 +8,6 @@
         void Create(T item);
         void Update(T item);
         void Delete(int id);
+        bool IsEmailUnique(string email);
     }
 }

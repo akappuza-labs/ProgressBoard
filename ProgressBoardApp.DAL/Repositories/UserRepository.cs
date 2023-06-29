@@ -38,6 +38,10 @@ namespace ProgressBoardApp.DAL.Repositories
         {
             return db.Users.Where(predicate).ToList();
         }
+        public bool IsEmailUnique(string email)
+        {
+            return !db.Users.Any(u => u.Email == email);
+        }
 
         public void Delete(int id)
         {
