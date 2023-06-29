@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressBoardApp.DAL", "Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressBoardApp.BAL", "ProgressBoardApp.BAL\ProgressBoardApp.BAL.csproj", "{3F7C7FC8-B1F2-44AD-AB9B-58EC10967572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{BE135075-04BD-4A0A-86D3-CC6689103837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{BE135075-04BD-4A0A-86D3-CC6689103837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +38,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F49BFE68-A800-47B3-A914-B0CC7913C82F}
+		SolutionGuid = {ECB5609A-5968-4667-9E76-A6C6025FA853}
 	EndGlobalSection
 EndGlobal
