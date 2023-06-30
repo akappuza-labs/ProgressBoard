@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressBoardApp.DAL", "Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressBoardApp.BAL", "ProgressBoardApp.BAL\ProgressBoardApp.BAL.csproj", "{3F7C7FC8-B1F2-44AD-AB9B-58EC10967572}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{BE135075-04BD-4A0A-86D3-CC6689103837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressBoardApp.Domain", "Domain\ProgressBoardApp.Domain.csproj", "{BE135075-04BD-4A0A-86D3-CC6689103837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
