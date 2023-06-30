@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ProgressBoardApp.Domain.Entities
+﻿namespace ProgressBoardApp.Domain.Entities
 {
+
     public class User
     {
+
         public int Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }

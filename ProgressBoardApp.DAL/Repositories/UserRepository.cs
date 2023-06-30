@@ -5,8 +5,10 @@ using ProgressBoardApp.Domain.Entities;
 
 namespace ProgressBoardApp.DAL.Repositories
 {
+
     public class UserRepository : IRepository<User>
     {
+
         private ProgressBoardContext db;
 
         public UserRepository(ProgressBoardContext context)

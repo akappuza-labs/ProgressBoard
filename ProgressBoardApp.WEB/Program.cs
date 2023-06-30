@@ -1,10 +1,16 @@
 using Microsoft.EntityFrameworkCore;
+using ProgressBoardApp.BAL.Interfaces;
+using ProgressBoardApp.BAL.Services;
 using ProgressBoardApp.DAL.DataAccess;
+using ProgressBoardApp.DAL.Interfaces;
+using ProgressBoardApp.DAL.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Dependencies
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUnitOfWork, EFUnitOfWork>();
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

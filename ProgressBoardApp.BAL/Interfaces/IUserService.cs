@@ -4,8 +4,10 @@ namespace ProgressBoardApp.BAL.Interfaces
 {
     public interface IUserService
     {
-        void CreateUser(UserDTO userDto);
-        IEnumerable<UserDTO> GetAllUsers();
-        void Dispose();
+ 
+        void CreateUser(UserDto userDto);
+        
+        IEnumerable<UserDto> GetAllUsers();
+        
     }
 }

@@ -1,7 +1,7 @@
-﻿namespace ProgressBoardApp.BAL.DTO
+﻿namespace ProgressBoardApp.WEB.Models
 {
 
-    public class UserDto
+    public class UserViewModel
     {
 
         public int Id { get; set; }

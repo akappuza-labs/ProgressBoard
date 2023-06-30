@@ -9,47 +9,50 @@ using System.Text.RegularExpressions;
 
 namespace ProgressBoardApp.BAL.Services
 {
+
     public class UserService : IUserService
     {
+
         IUnitOfWork Database { get; set; }
 
         public UserService(IUnitOfWork uow)
         {
             Database = uow;
         }
-        public void CreateUser(UserDTO userDto)
+
+        public void CreateUser(UserDto userDto)
         {
             // Validation
             if (userDto.Email.Length > 50 || userDto.Email.Length == 0)
             {
-                throw new Infrastructure.ValidationException(userDto.Email, "Wrong length of Email");
+                throw new Infrastructure.ValidationException("Wrong length of Email", userDto.Email);
             }
 
             if (userDto.FirstName.Length > 50 || userDto.FirstName.Length == 0)
             {
-                throw new Infrastructure.ValidationException(userDto.FirstName, "Wrong length of First name");
+                throw new Infrastructure.ValidationException("Wrong length of First name", userDto.FirstName);
             }
 
             if (userDto.LastName.Length > 50 || userDto.LastName.Length == 0)
             {
-                throw new Infrastructure.ValidationException(userDto.LastName, "Wrong length of Last name");;
+                throw new Infrastructure.ValidationException("Wrong length of Last name", userDto.LastName);;
             }
 
             if (userDto.Password.Length == 0)
             {
-                throw new Infrastructure.ValidationException(userDto.Password, "Wrong length of Password");
+                throw new Infrastructure.ValidationException("Wrong length of Password", userDto.Password);
             }
 
             string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
             Regex regex = new Regex(emailPattern);
             if (!regex.IsMatch(userDto.Email))
             {
-                throw new Infrastructure.ValidationException(userDto.Email, "Wrong format of Email");
+                throw new Infrastructure.ValidationException("Wrong format of Email", userDto.Email);
             }
             
             if (!Database.Users.IsEmailUnique(userDto.Email))
             {
-                throw new Infrastructure.ValidationException(userDto.Email, "Email is already taken");
+                throw new Infrastructure.ValidationException("Email is already taken", userDto.Email);
             }
 
             // Password hash
@@ -72,15 +75,14 @@ namespace ProgressBoardApp.BAL.Services
             Database.Save();
         }
 
-        public IEnumerable<UserDTO> GetAllUsers()
+        public IEnumerable<UserDto> GetAllUsers()
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>()).CreateMapper();
-            return (IEnumerable<UserDTO>)mapper.Map<IEnumerable<User>, List<User>>(Database.Users.GetAll());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDto>());
+            var mapper = config.CreateMapper();
+            var users = Database.Users.GetAll();
+            var userDtos = mapper.Map<IEnumerable<User>, IEnumerable<UserDto>>(users);
+            return userDtos;
         }
 
-        public void Dispose()
-        {
-            Database.Dispose();
-        }
     }
 }

@@ -1,11 +1,14 @@
 ﻿namespace ProgressBoardApp.BAL.Infrastructure
 {
+
     public class ValidationException : Exception
     {
-        public string Property { get; protected set; }
-        public ValidationException(string message, string prop) : base(message)
+
+        public string ValidationProperty { get; set; }
+        
+        public ValidationException(string message, string validationProperty) : base(message)
         {
-            Property = prop;
+            ValidationProperty = validationProperty;
         }
     }
 }

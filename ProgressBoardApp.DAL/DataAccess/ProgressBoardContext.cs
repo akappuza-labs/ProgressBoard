@@ -3,15 +3,15 @@ using ProgressBoardApp.Domain.Entities;
 
 namespace ProgressBoardApp.DAL.DataAccess
 {
+
     public class ProgressBoardContext : DbContext
     {
+
         public DbSet<User> Users => Set<User>();
 
         public ProgressBoardContext(DbContextOptions<ProgressBoardContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated(); 
-        }
+            : base(options) { }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -5,15 +5,18 @@ using ProgressBoardApp.Domain.Entities;
 
 namespace ProgressBoardApp.DAL.Repositories
 {
+
     public class EFUnitOfWork : IUnitOfWork
     {
-        private ProgressBoardContext db;
+
+        private readonly ProgressBoardContext db;
         private UserRepository userRepository;
 
         public EFUnitOfWork(DbContextOptions<ProgressBoardContext> options)
         {
             db = new ProgressBoardContext(options);
         }
+
         public IRepository<User> Users
         {
             get
