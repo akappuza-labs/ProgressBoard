@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\ProgressBoardApp.Domain.csproj" />
     <ProjectReference Include="..\ProgressBoardApp.DAL\ProgressBoardApp.DAL.csproj" />
+    <ProjectReference Include="..\ProgressBoardApp.Domain\ProgressBoardApp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

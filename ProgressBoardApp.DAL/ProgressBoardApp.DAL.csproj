@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\ProgressBoardApp.Domain.csproj" />
+    <ProjectReference Include="..\ProgressBoardApp.Domain\ProgressBoardApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>
